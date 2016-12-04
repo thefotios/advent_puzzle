@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/%40thefotios%2Fadvent_puzzle.svg)](https://badge.fury.io/js/%40thefotios%2Fadvent_puzzle)
 # advent_puzzle
 
 Simple helper class for parsing and running [Advent of Code][advent] puzzles.
