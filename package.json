@@ -1,6 +1,6 @@
 {
   "name": "@thefotios/advent_puzzle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper class for parsing and running Advent of Code puzzles",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,12 @@
     "extends": "airbnb-base",
     "rules": {
       "no-console": "off",
-      "no-underscore-dangle": ["error", { "allowAfterThis": true }]
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allowAfterThis": true
+        }
+      ]
     }
   }
 }
