@@ -1,0 +1,35 @@
+{
+  "name": "@thefotios/advent_puzzle",
+  "version": "1.0.0",
+  "description": "Helper class for parsing and running Advent of Code puzzles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thefotios/advent_puzzle.git"
+  },
+  "keywords": [
+    "advent",
+    "advent_of_code"
+  ],
+  "author": "Fotios Lindiakos <fotioslindiakos@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thefotios/advent_puzzle/issues"
+  },
+  "homepage": "https://github.com/thefotios/advent_puzzle#readme",
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "no-console": "off",
+      "no-underscore-dangle": ["error", { "allowAfterThis": true }]
+    }
+  }
+}
