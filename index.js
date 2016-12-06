@@ -27,23 +27,24 @@ class Puzzle {
     const input = typeof (data) === 'undefined' ? Puzzle.getInput(process.argv) : Promise.resolve({ data, type });
     return input
       .then(({ data: d, type: t }) => {
+        let processor;
         switch (t.toUpperCase()) {
           case 'A':
-            this.processor = this.A;
+            processor = this.A;
             break;
           case 'B':
-            this.processor = this.B;
+            processor = this.B;
             break;
           default:
             throw new Error(`Unknown puzzle type ${this.type}`);
         }
-        return d;
+        return { d, processor };
       })
-      .then(d => this.cleanInput(d))
-      .then(d => this.before(d))
-      .then(d => this.processor(d))
-      .then(d => this.after(d))
-      .then(d => this.logger(d));
+      .then(({ d: d1, processor }) => Promise.resolve(this.cleanInput(d1))
+          .then(d => this.before(d))
+          .then(d => processor(d))
+          .then(d => this.after(d))
+          .then(d => this.logger(d)));
   }
 
   cleanInput(data) {
