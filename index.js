@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const noop = data => data;
-const consoleLogger = data => console.log(data);
+const consoleLogger = ({ type, data }) => console.log({ type, data });
 
 class Puzzle {
   constructor({
@@ -38,13 +38,13 @@ class Puzzle {
           default:
             throw new Error(`Unknown puzzle type ${this.type}`);
         }
-        return { d, processor };
+        return { d, processor, t };
       })
-      .then(({ d: d1, processor }) => Promise.resolve(this.cleanInput(d1))
+      .then(({ d: d1, processor, t }) => Promise.resolve(this.cleanInput(d1))
           .then(d => this.before(d))
           .then(d => processor(d))
           .then(d => this.after(d))
-          .then(d => this.logger(d)));
+          .then(d => this.logger({ type: t, data: d })));
   }
 
   cleanInput(data) {
