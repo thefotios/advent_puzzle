@@ -1,6 +1,6 @@
 {
   "name": "@thefotios/advent_puzzle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helper class for parsing and running Advent of Code puzzles",
   "main": "index.js",
   "scripts": {
